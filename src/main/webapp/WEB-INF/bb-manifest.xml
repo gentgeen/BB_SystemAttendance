@@ -5,25 +5,78 @@
   <plugin>
 
     <name value="BB Attendance Block" />
-    <handle value="BB Attendance Block" />
+    <handle value="AttendBlock" />
     <description value="Hackerspace Attendance Building Block" />
     <default-locale value="en_US" />
 
     <version value="1.0" />
     <requires>
-      <bbversion value="9.1.130000.0" />
+      <bbversion value="9.1.110000.0" />
     </requires>
 
     <vendor>
-      <id value="kareeves" />
-      <name value="K-12 Inc." />
+      <id value="kar" />
+      <name value="AttendBlock" />
       <url value="http://www.blackboard.com/" />
       <description value="Attendance Hackerspace Project" />
     </vendor>
 
-    <schema-dirs>
+  <!--  <schema-dirs>
       <schema-dir dir-name="spring" />
-    </schema-dirs>
+    </schema-dirs> -->
+
+	<application-defs>
+      <application 
+        handle="AttendBlock" 
+        is-sys-tool="true" is-course-tool="true"
+        is-org-tool="true" is-group-tool="true" use-ssl="false"
+        name="plugin.name" can-allow-guest="false"
+        small-icon="/images/springdemo_icon.png" 
+        large-icon="/images/springdemo_icon.png">
+        <description lang="en_US">Attendance System</description>
+        <links>
+        <!--
+          <link>
+            <type value="system_tool"/>
+            <handle value="hello_world"/>
+            <name value="b2.name"/>
+            <navhandle value=""/>
+            <url value="helloWorld"/>
+            <entitlement-uid value="helloWorld.VIEW" />
+          </link>
+          -->
+		  <link>
+            <type value="course_tool" />
+            <name value="b2.name" />
+            <url value="helloWorld" />
+            <description value="course_tool.description" />
+            <icons>
+              <listitem value="images/helloWorldLogo-50x50.gif" />
+            </icons>
+          </link>
+          <!--
+          <link>
+            <type value="group_tool" />
+            <name value="b2.name" />
+            <url value="helloWorld" />
+            <description value="group_tool.description" />
+            <icons>
+              <listitem value="images/helloWorldLogo-50x50.gif" />
+            </icons>
+          </link>
+          <link>
+            <type value="tool" />
+            <name value="b2.name" />
+            <url value="helloWorld" />
+            <description value="course_tool.description" />
+            <icons>
+              <listitem value="images/helloWorldLogo-50x50.gif" />
+            </icons>
+          </link>
+          -->          
+        </links>
+      </application>
+    </application-defs>
 
     <permissions>
       <permission type="persist" name="*" actions="create,modify,delete,persist" />
